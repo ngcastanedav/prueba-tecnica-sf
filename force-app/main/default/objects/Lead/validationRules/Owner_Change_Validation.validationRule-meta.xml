@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Change_Validation</fullName>
+    <active>true</active>
+    <description>Impide cambiar el Owner si no están completos Country, Lead Source y/o No. of Employees según perfil.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(OwnerId),
+    OR(
+        /* System Administrator: solo necesita Lead Source */
+        AND(
+            $Profile.Name = &apos;System Administrator&apos;,
+            ISBLANK(TEXT(LeadSource))
+        ),
+        /* Contract Manager: necesita Country y Lead Source, NO necesita No. of Employees */
+        AND(
+            $Profile.Name = &apos;Contract Manager&apos;,
+            OR(
+                ISBLANK(Country),
+                ISBLANK(TEXT(LeadSource))
+            )
+        ),
+        /* Resto de perfiles: necesita Country, Lead Source y No. of Employees */
+        AND(
+            $Profile.Name &lt;&gt; &apos;System Administrator&apos;,
+            $Profile.Name &lt;&gt; &apos;Contract Manager&apos;,
+            OR(
+                ISBLANK(Country),
+                ISBLANK(TEXT(LeadSource)),
+                ISBLANK(NumberOfEmployees)
+            )
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>You cannot change the Lead Owner until the following fields are filled in: Lead Source, and depending on your profile, Country and/or No. of Employees.</errorMessage>
+</ValidationRule>
