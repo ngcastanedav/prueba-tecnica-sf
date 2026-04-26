@@ -1,7 +1,7 @@
 public with sharing class CountryAPIService {
     
-    private static final String API_KEY = 'd8cb64434bdee24b66ccf4f5cbbabff1';
-    private static final String BASE_URL = 'http://api.countrylayer.com/v2';
+    private static final String API_KEY = Label.API_KEY;
+    private static final String BASE_URL = Label.API_URL;
     
     /**
      * Obtiene todos los países desde la API de countrylayer

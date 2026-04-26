@@ -42,17 +42,12 @@
         <connector>
             <targetReference>Set_Owner_Since</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>OwnerId</field>
-            <operator>IsChanged</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
+        <filterFormula>OR(
+ISCHANGED({!$Record.OwnerId}), ISNEW()
+)</filterFormula>
         <object>Lead</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
-        <triggerType>RecordAfterSave</triggerType>
+        <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
 </Flow>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>API_KEY</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>API_KEY</shortDescription>
+        <value>d8cb64434bdee24b66ccf4f5cbbabff1</value>
+    </labels>
+    <labels>
+        <fullName>API_URL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>API_URL</shortDescription>
+        <value>http://api.countrylayer.com/v2</value>
+    </labels>
+</CustomLabels>

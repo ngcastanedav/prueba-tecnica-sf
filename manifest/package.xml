@@ -53,5 +53,10 @@
         <members>Set_Owner_Since_Lead</members>
         <name>Flow</name>
     </types>
+    <types>
+        <members>API_KEY</members>
+        <members>API_URL</members>
+        <name>CustomLabel</name>
+    </types>
     <version>62.0</version>
 </Package>
