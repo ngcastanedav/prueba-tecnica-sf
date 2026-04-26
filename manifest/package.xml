@@ -42,6 +42,10 @@
         <name>ValidationRule</name>
     </types>
     <types>
+        <members>Country__c.Country_Compact</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
         <members>Lead-Lead Layout</members>
         <name>Layout</name>
     </types>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_Compact</fullName>
+    <fields>Name</fields>
+    <fields>Capital__c</fields>
+    <fields>Region__c</fields>
+    <fields>Alpha2__c</fields>
+    <fields>Alpha3__c</fields>
+    <fields>BlocsShort__c</fields>
+    <label>Country Compact</label>
+</CompactLayout>
