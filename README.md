@@ -56,4 +56,6 @@ force-app/main/default/
 
 - **Remote Site Setting**: `http://api.countrylayer.com`
 - **API Key**: configurar en `CountryAPIService.cls` (variable `API_KEY`)
-- **Job programado**: `Daily Country Sync` con `CountrySyncSchedulable`
+- **Scheduled Job**: Ejecutar en Developer Console:
+  ```apex
+  System.schedule('Daily Country Sync', '0 0 3 * * ?', new CountrySyncSchedulable());
